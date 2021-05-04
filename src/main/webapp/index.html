@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <title>Hello App Engine</title>
-  </head>
+<html lang="fi">
+<head>
+<link rel="stylesheet" href="style.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
-    <h1>Hello App Engine!</h1>
-
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href='/hello'>The servlet</a></td>
-      </tr>
-    </table>
-  </body>
+<title>Vaalikone REST Version</title>
+</head>
+<body>
+	<div class="header">
+		<h1>Vaalikone</h1>
+	</div>
+    
+    <div class="action">
+        <h2>Tervetuloa Vaalikoneeseen</h2>
+        <br><br>
+        <a href="/rest/vaalikoneservice/listAllCandidates">Listaa kaikki ehdokkaat</a><br><br>
+        <a href="addCandidate.html">Lis‰‰ uusi ehdokas</a><br><br>
+    </div>
+   <div class="footer">
+		<p>&copy; Vaalikone. All rights reserved.</p>
+	</div>
+	
+</body>
 </html>

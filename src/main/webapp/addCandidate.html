@@ -1,23 +1,58 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <title>Candidate addition</title>
-  </head>
+<html lang="fi">
+<head>
+<link rel="stylesheet" href="style.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <body>
-    <h1>Fill in!</h1>
-
+<title>Vaalikone väittämän poisto</title>
+</head>
+<body>
+	<div class="header">
+		<h1>Vaalikone</h1>
+	</div>
+    
+    <div class="action">
 	<form action="/rest/vaalikoneservice/addCandidate" method="post">
-	First name: <input type='text' name='firstname' value=''><br>
-	Last name: <input type='text' name='lastname' value=''><br>
-	Candidate number: <input type='text' name='candidatenumber' value=''><br>
-	Party: <input type='text' name='party' value=''><br>
-	Street Address: <input type='text' name='streetaddress' value=''><br>
-	Zip code: <input type='text' name='zipcode' value=''><br>
-	City: <input type='text' name='city' value=''><br>
-	Why would you be a good candidate? <input type='text' name='why' value=''><br>
-	<input type='submit' name='ok' value='Send'>
+	<p>
+		<label for="firstname">First name: </label>
+		<input type='text' name='firstname' value=''>
+	</p>
+	<p>
+		<label for="lastname">Last name: </label>
+		<input type='text' name='lastname' value=''>
+	</p>
+	<p>
+		<label for="candidatenumber">Candidate number: </label>
+		<input type='text' name='candidatenumber' value=''>
+	</p>
+	<p>
+		<label for="party">Party: </label>
+		<input type='text' name='party' value=''>
+	</p>
+	<p>
+		<label for="streetaddress">Street Address: </label>
+		<input type='text' name='streetaddress' value=''>
+	</p>
+	<p>
+		<label for="zipcode">Zip code: </label>
+		<input type='text' name='zipcode' value=''>
+	</p>
+	<p>
+		<label for="city">City: </label>
+		<input type='text' name='city' value=''>
+	</p>
+	<p>
+		<label for="why">Why would you be a good candidate? </label>
+		<input type='text' name='why' value=''>
+	</p>
+	<p>
+		<input type='submit' name='ok' value='Send'>
+	</p>
 	</form>
-  </body>
+</div>
+   <div class="footer">
+		<p>&copy; Vaalikone. All rights reserved.</p>
+	</div>
+	
+</body>
 </html>
