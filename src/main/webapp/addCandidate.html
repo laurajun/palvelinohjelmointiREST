@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>Candidate addition</title>
+  </head>
+
+  <body>
+    <h1>Fill in!</h1>
+
+	<form action="/rest/vaalikoneservice/addCandidate" method="post">
+	First name: <input type='text' name='firstname' value=''><br>
+	Last name: <input type='text' name='lastname' value=''><br>
+	Candidate number: <input type='text' name='candidatenumber' value=''><br>
+	Party: <input type='text' name='party' value=''><br>
+	Street Address: <input type='text' name='streetaddress' value=''><br>
+	Zip code: <input type='text' name='zipcode' value=''><br>
+	City: <input type='text' name='city' value=''><br>
+	Why would you be a good candidate? <input type='text' name='why' value=''><br>
+	<input type='submit' name='ok' value='Send'>
+	</form>
+  </body>
+</html>
