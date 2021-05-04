@@ -42,7 +42,7 @@ public class Vaalikone {
 	 */
 	@GET
 	@Path("/getonecandidate/{candidateid}")
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN + ";charset=utf-8")
 	public String getOneCandidate(@PathParam("candidateid") int id) {
 		String s=getCandidate(id);
 		return s;
