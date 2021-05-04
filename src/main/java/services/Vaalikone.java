@@ -31,7 +31,7 @@ public class Vaalikone {
 		@GET
 		@Path("/listAllCandidates")
 		@Produces(MediaType.APPLICATION_JSON)
-		public List<Candidate> readAllPrey() {
+		public List<Candidate> readAllCandidate() {
 		//Create an EntityManagerFactory with the settings from persistence.xml file
 			EntityManagerFactory emf=Persistence.createEntityManagerFactory("vaalikoneapp");
 			//And then EntityManager, which can manage the entities.
