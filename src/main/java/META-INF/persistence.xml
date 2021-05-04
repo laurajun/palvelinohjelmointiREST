@@ -4,7 +4,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	
 <!-- The name of the persistence unit: here jpa247. This is used in the application code -->	
-	<persistence-unit name="jpa247">
+	<persistence-unit name="vaalikoneapp">
 <!-- All the classes, which belong to the peristence unit and so can be persisted using JPA
 	Here there is just one: app.Fish. All the other should be added in the same way. -->	
 	<class>data.Candidate</class>
