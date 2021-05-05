@@ -31,7 +31,7 @@ public class Vaalikone {
 	
 		//Reading all the rows from table candidate.
 		@GET
-		@Path("/listAllCandidates")
+		@Path("/listAllCandidatesService")
 		@Produces(MediaType.APPLICATION_JSON)
 		public List<Candidate> readAllCandidate() {
 		//Create an EntityManagerFactory with the settings from persistence.xml file
