@@ -21,7 +21,7 @@
 	<td>${requestScope.candidate.candidateNr}</td>
 	<td>${requestScope.candidate.streetAddr}<br>${requestScope.candidate.zipCode} ${requestScope.candidate.city}</td>
 	<td>${requestScope.candidate.notes}</td>
-	<td><a href="/EditCandidate/?id=${requestScope.candidate.id}">Muokkaa</a><br><a href="/DeleteCandidate/?id=${requestScope.candidate.id}" onclick="return window.confirm('Oletko varma?');">Poista</a></td>
+	<td><a href="/EditCandidate?id=${requestScope.candidate.id}">Muokkaa</a><br><a href="/DeleteCandidate?id=${requestScope.candidate.id}" onclick="return window.confirm('Oletko varma?');">Poista</a></td>
 </tr>
 </table>
 <%@include  file="../htmlend.html" %>
