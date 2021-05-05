@@ -179,7 +179,11 @@ These are moved to servlet api and not any more in Java SE API
     <version>1.1.1</version>
 </dependency>
 
-
+<dependency>
+	<groupId>com.zaxxer</groupId>
+	<artifactId>HikariCP</artifactId>
+	<version>3.3.0</version>
+</dependency>
         
           
     </dependencies>
