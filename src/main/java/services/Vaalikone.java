@@ -85,6 +85,22 @@ public class Vaalikone {
 			em.getTransaction().commit();
 			return c;
 		}
+		
+		//This method returns the Candidate object as a JSON string
+		@GET
+		@Path("/deletecandidateservice/{candidateid}")
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Candidate deleteCandidate(@PathParam("candidateid") int id) {
+			EntityManager em=emf.createEntityManager();
+			em.getTransaction().begin();
+			Candidate c=em.find(Candidate.class, id);
+			if (c!=null) {
+				em.remove(c);//The actual insertion line
+			}
+			em.getTransaction().commit();
+			return c;
+		}
 			
 //	private ArrayList<Candidate> getCandidates() {
 //		// TODO Auto-generated method stub
