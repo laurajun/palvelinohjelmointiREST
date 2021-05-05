@@ -59,6 +59,20 @@ public class Vaalikone {
 			return candidate;
 		}
 		
+		//This method adds new Candidate to database
+		@POST
+		@Path("/addCandidateService")
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Candidate NewCandidate(Candidate candidate) {
+			//Candidate can=new Candidate(candidateNr, party, firstname, lastname, streetAddr, zipcode, city, notes);
+			EntityManager em=emf.createEntityManager();
+			em.getTransaction().begin();
+			em.persist(candidate);
+			em.getTransaction().commit();
+			return candidate;
+		}
+		
 		//This method returns the Candidate object as a JSON string
 		@GET
 		@Path("/getonecandidate/{candidateid}")
@@ -71,7 +85,7 @@ public class Vaalikone {
 			em.getTransaction().commit();
 			return c;
 		}
-	
+			
 //	private ArrayList<Candidate> getCandidates() {
 //		// TODO Auto-generated method stub
 //		ArrayList<Candidate> list=new ArrayList<>();
