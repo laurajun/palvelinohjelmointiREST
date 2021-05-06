@@ -10,6 +10,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -97,6 +98,22 @@ public class Vaalikone {
 			Candidate c=em.find(Candidate.class, id);
 			if (c!=null) {
 				em.remove(c);//The actual insertion line
+			}
+			em.getTransaction().commit();
+			return c;
+		}
+		
+		//This method updates the candidate
+		@PUT
+		@Path("/updateCandidateService")
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
+		public Candidate UpdateCandidate(Candidate candidate) {
+			EntityManager em=emf.createEntityManager();
+			em.getTransaction().begin();
+			Candidate c=em.find(Candidate.class, candidate.getId());
+			if (c!=null) {
+				em.merge(candidate);//The actual update line
 			}
 			em.getTransaction().commit();
 			return c;
