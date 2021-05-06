@@ -35,9 +35,9 @@ public class DeleteCandidate extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id=request.getParameter("firstname");
+		String id=request.getParameter("id");
 		String uri = "http://127.0.0.1:8080/rest/vaalikoneservice/deletecandidateservice/"+id;
-				
+			
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
