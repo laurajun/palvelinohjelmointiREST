@@ -43,6 +43,18 @@ public class Candidate {
 		this.setCity(city);
 		this.setNotes(notes);
 	}
+	
+	public Candidate(String id, String candidateNr, String party, String firstname, String lastname, String streetAddr, String zipCode, String city, String notes) {
+		this.setId(id);
+		this.setCandidateNr(candidateNr);
+		this.setParty(party);
+		this.setFirstname(firstname);
+		this.setLastname(lastname);
+		this.setStreetAddr(streetAddr);
+		this.setZipCode(zipCode);
+		this.setCity(city);
+		this.setNotes(notes);
+	}
 	public int getId() {
 		return id;
 	}
