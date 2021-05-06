@@ -104,7 +104,7 @@ public class Vaalikone {
 		}
 		
 		//This method updates the candidate
-		@PUT
+		@POST
 		@Path("/updateCandidateService")
 		@Produces(MediaType.APPLICATION_JSON)
 		@Consumes(MediaType.APPLICATION_JSON)
