@@ -25,6 +25,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.apache.commons.io.FilenameUtils;
+import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
@@ -136,16 +138,22 @@ public class Vaalikone {
 		@Path("/fileupload")
 		@Consumes({MediaType.MULTIPART_FORM_DATA})
 		public Response uploadFile( @FormDataParam("file") InputStream fileInputStream,
-	            @FormDataParam("file") FormDataContentDisposition fileMetaData, 
+	            @FormDataParam("file") FormDataContentDisposition fileMetaData,
+	            @FormDataParam("id") String id,
 	            @Context ServletContext sc) 
 	            		throws Exception
 		{
-			String UPLOAD_PATH=sc.getRealPath("/");
+			String UPLOAD_PATH="C:/temp/";
+			String uploadfilename = fileMetaData.getFileName();
+			String filetype = FilenameUtils.getExtension(uploadfilename);
+			String filename = id+"."+filetype;
+			System.out.println(filename);
 		    try{
 		        int read = 0;
 		        byte[] bytes = new byte[1024];
 		 
-		        OutputStream out = new FileOutputStream(new File(UPLOAD_PATH + "/"+fileMetaData.getFileName()));
+		        //OutputStream out = new FileOutputStream(new File(UPLOAD_PATH + "/"+fileMetaData.getFileName()));
+		        OutputStream out = new FileOutputStream(new File(UPLOAD_PATH + "/"+filename));
 		        while ((read = fileInputStream.read(bytes)) != -1) 
 		        {
 		            out.write(bytes, 0, read);

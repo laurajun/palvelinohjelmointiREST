@@ -1,5 +1,6 @@
 package app;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -49,6 +50,17 @@ public class ShowSingleCandidate extends HttpServlet implements Servlet {
 		Builder b=wt.request();
 		Candidate candidate=b.get(Candidate.class);
 		String s=b.get(String.class);
+		String empPhoto = "c:/temp/images/"+id+".jpg";
+		String notfoundphoto = "c:/temp/images/notfound.jpg";
+		File tempFile = new File(empPhoto);
+		boolean exists = tempFile.exists();
+		System.out.println("Exists: "+exists);
+		if(exists) {
+			request.setAttribute("photo",empPhoto);
+		}
+		else {
+			request.setAttribute("photo","false");
+		}
 	    request.setAttribute("candidate", candidate);
 	    RequestDispatcher rd=request.getRequestDispatcher("./jsp/showsinglecandidate.jsp");
 		rd.forward(request, response);

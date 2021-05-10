@@ -22,7 +22,7 @@
 	<td>${requestScope.candidate.candidateNr}</td>
 	<td>${requestScope.candidate.streetAddr}<br>${requestScope.candidate.zipCode} ${requestScope.candidate.city}</td>
 	<td>${requestScope.candidate.notes}</td>
-	<td><form action="./rest/vaalikoneservice/fileupload" method="post" enctype="multipart/form-data"><input type="file" name="file" accept="image/*" /><br><input type="hidden" name="id" value="${requestScope.candidate.id}"><input type="submit" value="Upload" /></form></td>
+	<td><c:choose><c:when test="${requestScope.photo != 'false'}"><img src="${requestScope.photo}" height="100px" width="100px"></c:when><c:otherwise><form action="./rest/vaalikoneservice/fileupload" method="post" enctype="multipart/form-data"><input type="file" name="file" accept=".jpg" /><br><input type="hidden" name="id" value="${requestScope.candidate.id}"><input type="submit" value="Upload" /></form></c:otherwise></c:choose></td>
 	<td><a href="/UpdateCandidate?id=${requestScope.candidate.id}">Muokkaa</a><br><a href="/DeleteCandidate?id=${requestScope.candidate.id}" onclick="return window.confirm('Oletko varma?');">Poista</a></td>
 </tr>
 </table>
