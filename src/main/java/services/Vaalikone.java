@@ -140,7 +140,7 @@ public class Vaalikone {
 	            @Context ServletContext sc) 
 	            		throws Exception
 		{
-			String UPLOAD_PATH="c:/temp/";
+			String UPLOAD_PATH=sc.getRealPath("/");
 		    try{
 		        int read = 0;
 		        byte[] bytes = new byte[1024];
