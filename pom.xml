@@ -163,6 +163,12 @@
 	    <artifactId>eclipselink</artifactId>
 	    <version>2.5.0</version>
 	</dependency>
+	
+	<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-multipart</artifactId>
+    <version>2.27</version>
+	</dependency>
 
 <!-- 
 If using Java 11 or newer add next two.
