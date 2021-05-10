@@ -136,10 +136,11 @@ public class Vaalikone {
 		@Path("/fileupload")
 		@Consumes({MediaType.MULTIPART_FORM_DATA})
 		public Response uploadFile( @FormDataParam("file") InputStream fileInputStream,
-	            @FormDataParam("file") FormDataContentDisposition fileMetaData, @Context ServletContext sc) 
+	            @FormDataParam("file") FormDataContentDisposition fileMetaData, 
+	            @Context ServletContext sc) 
 	            		throws Exception
 		{
-			String UPLOAD_PATH=sc.getRealPath("/");
+			String UPLOAD_PATH="c:/temp/";
 		    try{
 		        int read = 0;
 		        byte[] bytes = new byte[1024];
