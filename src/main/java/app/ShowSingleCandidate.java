@@ -41,11 +41,14 @@ public class ShowSingleCandidate extends HttpServlet implements Servlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id=Integer.parseInt(request.getParameter("id"));
-		EntityManager em=emf.createEntityManager();
-	    em.getTransaction().begin();
-	    Candidate candidate=em.find(Candidate.class, id);
-	    em.getTransaction().commit();
+		String id=request.getParameter("id");
+		String uri = "http://127.0.0.1:8080/rest/vaalikoneservice/getonecandidate/"+id;
+			
+		Client c=ClientBuilder.newClient();
+		WebTarget wt=c.target(uri);
+		Builder b=wt.request();
+		Candidate candidate=b.get(Candidate.class);
+		String s=b.get(String.class);
 	    request.setAttribute("candidate", candidate);
 	    RequestDispatcher rd=request.getRequestDispatcher("./jsp/showsinglecandidate.jsp");
 		rd.forward(request, response);
