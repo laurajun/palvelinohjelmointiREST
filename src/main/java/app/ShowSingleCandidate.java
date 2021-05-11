@@ -50,8 +50,8 @@ public class ShowSingleCandidate extends HttpServlet implements Servlet {
 		Builder b=wt.request();
 		Candidate candidate=b.get(Candidate.class);
 		String s=b.get(String.class);
-		String empPhoto = "c:/temp/images/"+id+".jpg";
-		String notfoundphoto = "c:/temp/images/notfound.jpg";
+		String empPhoto = "../images/"+id+".jpg";
+		String notfoundphoto = "../images/notfound.jpg";
 		File tempFile = new File(empPhoto);
 		boolean exists = tempFile.exists();
 		System.out.println("Exists: "+exists);

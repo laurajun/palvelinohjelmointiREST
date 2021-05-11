@@ -143,11 +143,11 @@ public class Vaalikone {
 	            @Context ServletContext sc) 
 	            		throws Exception
 		{
-			String UPLOAD_PATH="C:/temp/";
+			String UPLOAD_PATH=sc.getRealPath("/images");
 			String uploadfilename = fileMetaData.getFileName();
 			String filetype = FilenameUtils.getExtension(uploadfilename);
 			String filename = id+"."+filetype;
-			System.out.println(filename);
+			System.out.println(UPLOAD_PATH);
 		    try{
 		        int read = 0;
 		        byte[] bytes = new byte[1024];
