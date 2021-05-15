@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>     
 <%@include  file="../htmlstart.html" %>
 <form action="/UpdateCandidate" method="post">
-<table border="0" class="tabledb">
+<table class="tabledb">
 	<tr>
 		<td><b>ID</b></td>
 		<td><b>Etunimi</b></td>
@@ -25,7 +25,7 @@
 	<td><input type='text' name='streetaddress' value='${requestScope.candidate.streetAddr}'></td>
 	<td><input type='text' name='zipcode' value='${requestScope.candidate.zipCode}'></td>
 	<td><input type='text' name='city' value='${requestScope.candidate.city}'></td>
-	<td><input type='textarea' name='why' value='${requestScope.candidate.notes}'></td>
+	<td><input type='text' name='why' value='${requestScope.candidate.notes}'></td>
 	<td><input type='submit' name='ok' value='Päivitä'></td>
 </tr>
 </table>

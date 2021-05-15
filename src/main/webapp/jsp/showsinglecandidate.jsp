@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>     
 <%@include  file="../htmlstart.html" %>
-<table border="0" class="tabledb">
+<table class="tabledb">
 	<tr>
 		<td><b>ID</b></td>
 		<td><b>Etunimi</b></td>
