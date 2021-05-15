@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
+import java.net.URI;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -16,7 +16,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -26,7 +25,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.apache.commons.io.FilenameUtils;
-import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
@@ -148,6 +146,8 @@ public class Vaalikone {
 			String filetype = FilenameUtils.getExtension(uploadfilename);
 			String filename = id+"."+filetype;
 			System.out.println(UPLOAD_PATH);
+			String url = "/ShowSingleCandidate?id="+id;
+			URI uri=new URI(url);
 		    try{
 		        int read = 0;
 		        byte[] bytes = new byte[1024];
@@ -159,12 +159,13 @@ public class Vaalikone {
 		            out.write(bytes, 0, read);
 		        }
 		        out.flush();
-		        out.close();
-		        
+		        out.close();		        
 		    } 
 		    catch (IOException e){
 		        throw new WebApplicationException("Error while uploading file. Please try again !!");
 		    }
-		    return Response.ok("Data uploaded successfully !!").build();
+		    // return Response.ok("Data uploaded successfully !!").build();
+		    // return Response.status(Status.MOVED_PERMANENTLY).location(uri).build();
+		    return Response.temporaryRedirect(uri).build();
 		}
 }
