@@ -46,7 +46,7 @@ public class UpdateCandidate extends HttpServlet {
 	    Candidate candidate=em.find(Candidate.class, id);
 	    em.getTransaction().commit();
 	    request.setAttribute("candidate", candidate);
-	    RequestDispatcher rd=request.getRequestDispatcher("./jsp/updatecandidate.jsp");
+	    RequestDispatcher rd=request.getRequestDispatcher("./jsp/updatecandidate.jsp"); 
 		rd.forward(request, response);
 	}
 
@@ -75,7 +75,6 @@ public class UpdateCandidate extends HttpServlet {
 		
 		Candidate returned=b.post(e, Candidate.class);//We get the response as a DogBreed
 
-		
 		response.sendRedirect("/ShowSingleCandidate?id="+id);
 	}
 

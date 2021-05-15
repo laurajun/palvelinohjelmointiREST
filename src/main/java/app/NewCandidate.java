@@ -2,7 +2,6 @@ package app;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,8 +63,7 @@ public class NewCandidate extends HttpServlet {
 		//Here we create an Entity of a DogBreed object as JSON string format
 		Entity<Candidate> e=Entity.entity(candidate,MediaType.APPLICATION_JSON);
 		
-		Candidate returned=b.post(e, Candidate.class);//We get the response as a DogBreed
-
+		Candidate returned=b.post(e, Candidate.class); 
 		
 		response.sendRedirect("/ListAllCandidates");
 	}
